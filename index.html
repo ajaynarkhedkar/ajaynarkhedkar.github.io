@@ -223,12 +223,12 @@
        HERO
     ================================================ */
     #hero {
-      min-height: 100vh;
+      min-height: 90vh;
       display: flex;
       align-items: center;
       background: var(--white);
       position: relative;
-      padding: 7rem 0 4rem;
+      padding: 5rem 0 3.5rem;
       overflow: hidden;
     }
 
@@ -252,14 +252,33 @@
       pointer-events: none;
     }
     .hero-blob-1 {
-      width: 500px; height: 500px;
-      top: -100px; right: -80px;
-      background: radial-gradient(circle, rgba(26,115,232,0.07) 0%, transparent 70%);
+      width: 550px; height: 550px;
+      top: -100px; right: -60px;
+      background: radial-gradient(circle, rgba(26,115,232,0.09) 0%, transparent 70%);
     }
     .hero-blob-2 {
-      width: 340px; height: 340px;
-      bottom: -60px; left: 10%;
-      background: radial-gradient(circle, rgba(52,168,83,0.05) 0%, transparent 70%);
+      width: 400px; height: 400px;
+      bottom: -60px; left: 5%;
+      background: radial-gradient(circle, rgba(52,168,83,0.07) 0%, transparent 70%);
+    }
+    .hero-blob-3 {
+      width: 360px; height: 360px;
+      top: 25%; left: -80px;
+      background: radial-gradient(circle, rgba(234,67,53,0.05) 0%, transparent 70%);
+    }
+
+    /* Floating tech background icons */
+    .floating-bg-icon {
+      position: absolute;
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      color: rgba(26, 115, 232, 0.05);
+      pointer-events: none;
+      z-index: 0;
+      animation: float-slow 7s ease-in-out infinite;
+    }
+    @keyframes float-slow {
+      0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }
+      50% { transform: translateY(-18px) rotate(8deg) scale(1.05); }
     }
 
     .hero-status {
@@ -339,7 +358,7 @@
       font-size: 1.06rem;
       color: var(--mid);
       line-height: 1.75;
-      max-width: 540px;
+      max-width: 610px;
       margin-bottom: 2.2rem;
       font-weight: 400;
     }
@@ -972,6 +991,12 @@
       position: relative;
     }
 
+    .project-accent-bar {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+    }
+
     .project-title {
       font-size: 1.05rem;
       font-weight: 700;
@@ -1435,12 +1460,27 @@
 <section id="hero">
   <div class="hero-blob hero-blob-1"></div>
   <div class="hero-blob hero-blob-2"></div>
+  <div class="hero-blob hero-blob-3"></div>
+
+  <!-- Floating Background Decorative Elements -->
+  <div class="floating-bg-icon float-icon-1" style="top: 15%; left: 3%; animation-delay: 0s;">
+    <i class="bi bi-code-slash"></i>
+  </div>
+  <div class="floating-bg-icon float-icon-2" style="top: 55%; left: 8%; animation-delay: 2s; color: rgba(234,67,53,0.06);">
+    <i class="bi bi-terminal"></i>
+  </div>
+  <div class="floating-bg-icon float-icon-3" style="top: 20%; right: 4%; animation-delay: 4s; color: rgba(52,168,83,0.06);">
+    <i class="bi bi-database"></i>
+  </div>
+  <div class="floating-bg-icon float-icon-4" style="top: 65%; right: 6%; animation-delay: 1.5s; color: rgba(251,188,5,0.07);">
+    <i class="bi bi-cpu"></i>
+  </div>
 
   <div class="container">
     <div class="row align-items-center gy-5">
 
       <!-- LEFT: Copy -->
-      <div class="col-lg-6 order-2 order-lg-1 reveal-left">
+      <div class="col-lg-7 order-2 order-lg-1 reveal-left">
         <div style="display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:1.4rem;">
           <div class="hero-status" style="margin-bottom:0;">
             <span class="status-pulse"></span>
@@ -1456,7 +1496,7 @@
         </div>
 
         <div class="reveal-d1">
-          <div class="eyebrow" style="margin-bottom: 0.6rem;">Engineering Scalable Enterprise Applications.</div>
+          <div class="eyebrow" style="margin-bottom: 0.6rem;">Building Production-Ready Enterprise Solutions.</div>
           <h1 class="hero-title">
             Hi, I'm Ajay Narkhedkar.
             <span class="role-text">Full Stack .NET Developer.</span>
@@ -1465,32 +1505,33 @@
 
         <div class="reveal-d2">
           <p class="hero-sub">
-            Specializing in robust backend architectures, dynamic Angular interfaces, and query optimization that accelerates business performance with 3+ years of hands-on .NET ecosystem delivery.
+            Full Stack .NET Developer with a backend and database-focused mindset. Experienced in building production web applications, optimizing SQL Server queries, and integrating Web APIs to support real-world business workflows.
           </p>
         </div>
 
         <div class="reveal-d3 d-flex flex-wrap gap-3">
           <a href="#projects" class="btn-hero-primary" id="hero-cta-projects">
             <i class="bi bi-grid-3x3-gap-fill"></i>
-            Explore Enterprise Solutions
+            View Enterprise Projects
           </a>
           <a href="#contact" class="btn-hero-outline" id="hero-cta-profile">
-            <i class="bi bi-person-lines-fill"></i>
-            View Professional Profile
+            <i class="bi bi-envelope"></i>
+            Get in Touch
           </a>
         </div>
 
         <div class="reveal-d4 stack-pills">
-          <span class="stack-pill"><span class="pill-dot" style="background:var(--blue);"></span>C# / .NET</span>
-          <span class="stack-pill"><span class="pill-dot" style="background:var(--red);"></span>ASP.NET MVC</span>
-          <span class="stack-pill"><span class="pill-dot" style="background:var(--green);"></span>Angular</span>
-          <span class="stack-pill"><span class="pill-dot" style="background:var(--yellow);"></span>SQL Server</span>
-          <span class="stack-pill"><span class="pill-dot" style="background:var(--mid);"></span>REST API</span>
+          <span class="stack-pill"><span class="pill-dot" style="background:var(--blue);"></span>ASP.NET Core</span>
+          <span class="stack-pill"><span class="pill-dot" style="background:var(--green);"></span>SQL Server</span>
+          <span class="stack-pill"><span class="pill-dot" style="background:var(--yellow);"></span>EF Core</span>
+          <span class="stack-pill"><span class="pill-dot" style="background:#7c3aed;"></span>GitHub Copilot (AI)</span>
+          <span class="stack-pill"><span class="pill-dot" style="background:var(--mid);"></span>Third-Party APIs</span>
+          <span class="stack-pill"><span class="pill-dot" style="background:var(--red);"></span>Angular / React</span>
         </div>
       </div>
 
       <!-- RIGHT: Premium Profile Visual -->
-      <div class="col-lg-6 order-1 order-lg-2">
+      <div class="col-lg-5 order-1 order-lg-2">
         <div class="hero-visual reveal-right reveal-d1">
           <div class="hero-profile-card">
 
@@ -1523,8 +1564,8 @@
                 <div class="pstat-label">Years Exp.</div>
               </div>
               <div class="pstat">
-                <div class="pstat-num pstat-num-red">99.9%</div>
-                <div class="pstat-label">Uptime</div>
+                <div class="pstat-num pstat-num-red">100%</div>
+                <div class="pstat-label">Production Focus</div>
               </div>
               <div class="pstat">
                 <div class="pstat-num pstat-num-green">6+</div>
@@ -1534,12 +1575,12 @@
 
             <!-- Tech tags -->
             <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:0.35rem;">
-              <span class="skill-tag tag-blue">C# / .NET</span>
-              <span class="skill-tag tag-blue">ASP.NET MVC</span>
-              <span class="skill-tag tag-red">Angular</span>
+              <span class="skill-tag tag-blue">ASP.NET Core</span>
               <span class="skill-tag tag-green">SQL Server</span>
-              <span class="skill-tag tag-dark">REST API</span>
               <span class="skill-tag tag-yellow">EF Core</span>
+              <span class="skill-tag tag-purple" style="background:rgba(124,58,237,0.08)!important; border-color:rgba(124,58,237,0.22)!important; color:#7c3aed!important;"><i class="bi bi-cpu-fill me-1"></i>GitHub Copilot</span>
+              <span class="skill-tag tag-dark">Third-Party APIs</span>
+              <span class="skill-tag tag-red">Angular &amp; React</span>
             </div>
 
             <!-- Floating badge — bottom right -->
@@ -1571,34 +1612,34 @@
           <div class="metric-tile reveal-scale">
             <div class="metric-icon-wrap"><i class="bi bi-calendar2-check-fill"></i></div>
             <div class="metric-num" data-target="3" data-suffix="+" data-decimals="0">3+</div>
-            <div class="metric-label">Years Experience<br>Full Stack .NET Delivery</div>
+            <div class="metric-label">Years Experience<br>.NET Ecosystem Dev</div>
           </div>
         </div>
 
-        <!-- Tile 2: Deployed Projects -->
+        <!-- Tile 2: Enterprise Applications -->
         <div class="col-6 col-md-3">
           <div class="metric-tile reveal-scale reveal-d1">
-            <div class="metric-icon-wrap"><i class="bi bi-grid-3x3-gap-fill"></i></div>
-            <div class="metric-num" data-target="5" data-suffix="+" data-decimals="0">5+</div>
-            <div class="metric-label">Enterprise Systems<br>Designed &amp; Deployed</div>
+            <div class="metric-icon-wrap"><i class="bi bi-layers-half"></i></div>
+            <div class="metric-num" data-target="6" data-suffix="+" data-decimals="0">6+</div>
+            <div class="metric-label">Production Applications<br>Developed &amp; Supported</div>
           </div>
         </div>
 
-        <!-- Tile 3: Agile & AI Delivery -->
+        <!-- Tile 3: API & Database -->
         <div class="col-6 col-md-3">
           <div class="metric-tile reveal-scale reveal-d2">
-            <div class="metric-icon-wrap"><i class="bi bi-lightning-charge-fill"></i></div>
-            <div class="metric-num" data-target="100" data-suffix="%" data-decimals="0">100%</div>
-            <div class="metric-label">Agile Delivery Rate<br>AI-Assisted Efficiency</div>
+            <div class="metric-icon-wrap"><i class="bi bi-database-check"></i></div>
+            <div class="metric-num" data-target="15" data-suffix="+" data-decimals="0">15+</div>
+            <div class="metric-label">Web API &amp; Database<br>Integrations Maintained</div>
           </div>
         </div>
 
-        <!-- Tile 4: Professional Awards -->
+        <!-- Tile 4: Agile Collaboration -->
         <div class="col-6 col-md-3">
           <div class="metric-tile reveal-scale reveal-d3">
-            <div class="metric-icon-wrap"><i class="bi bi-trophy-fill"></i></div>
-            <div class="metric-num" data-target="4" data-suffix="x" data-decimals="0">4x</div>
-            <div class="metric-label">Professional Awards<br>Community &amp; Team MVP</div>
+            <div class="metric-icon-wrap"><i class="bi bi-people-fill"></i></div>
+            <div class="metric-num" data-target="100" data-suffix="%" data-decimals="0">100%</div>
+            <div class="metric-label">Agile Sprint Delivery<br>Cross-team Collaboration</div>
           </div>
         </div>
 
@@ -1618,7 +1659,7 @@
         <h2 class="section-heading">Professional<br>Experience</h2>
         <div class="divider-bar"></div>
         <p class="section-lead">
-          Engineering impactful, production-grade enterprise systems from architecture through Agile delivery across .NET, MySQL, React, and Angular.
+          Translating business requirements into maintainable, production-ready technical solutions across the full .NET stack, with a focused backend and database mindset.
         </p>
         <div class="mt-4 p-3 rounded-3" style="background:var(--light); border:1px solid var(--border);">
           <div style="font-size:0.78rem; font-weight:600; color:var(--mid); margin-bottom:0.5rem; text-transform:uppercase; letter-spacing:0.08em;">Current Company</div>
@@ -1627,12 +1668,13 @@
         </div>
 
         <div class="mt-3 p-3 rounded-3" style="background:rgba(26,115,232,0.04); border:1px solid rgba(26,115,232,0.15);">
-          <div style="font-size:0.78rem; font-weight:600; color:var(--blue); margin-bottom:0.5rem; text-transform:uppercase; letter-spacing:0.08em;">Developer Intent &amp; Objectives</div>
+          <div style="font-size:0.78rem; font-weight:600; color:var(--blue); margin-bottom:0.5rem; text-transform:uppercase; letter-spacing:0.08em;">Developer Focus &amp; Principles</div>
           <ul style="font-size:0.8rem; color:var(--mid); padding-left:1rem; margin-bottom:0; line-height:1.6; list-style-type:square;">
-            <li style="margin-bottom:0.4rem;"><strong>Long-Term Scale:</strong> Actively seeking a robust, long-term opportunity to design, scale, and deliver resilient software architectures.</li>
-            <li style="margin-bottom:0.4rem;"><strong>Freelance Projects:</strong> Open for freelance work, consulting contracts, specialized database optimization, and high-performance API integrations.</li>
-            <li style="margin-bottom:0.4rem;"><strong>Continuous Learning:</strong> Committed to exploring advanced cloud engineering, distributed services, and bleeding-edge development strategies.</li>
-            <li style="margin-bottom:0;"><strong>Value Delivery:</strong> Dedicated to accelerating team output by merging Agile practices with modern AI-driven coding methodologies.</li>
+            <li style="margin-bottom:0.4rem;"><strong>Clean Backend:</strong> Committed to modular, readable, and decoupled C# logic following SOLID guidelines.</li>
+            <li style="margin-bottom:0.4rem;"><strong>Database Engineering:</strong> Specialized in stored procedure optimization, LINQ query tuning, and SQL Server transactions.</li>
+            <li style="margin-bottom:0.4rem;"><strong>API &amp; Integration:</strong> Experienced in designing clean RESTful Web API endpoints to integrate complex business logic.</li>
+            <li style="margin-bottom:0.4rem;"><strong>Agile Sprints:</strong> Bridging analytical debugging and real-world software delivery to maintain production stability.</li>
+            <li style="margin-bottom:0;"><strong>AI-Assisted Efficiency:</strong> Leveraging tools like GitHub Copilot to optimize boilerplate and focus on core software architecture.</li>
           </ul>
         </div>
       </div>
@@ -1655,11 +1697,12 @@
                 April 2025 — Present
               </div>
               <ul class="exp-bullets">
-                <li>Developing high-performance, scalable backend services using <strong>C# and .NET Core</strong>, ensuring robust RESTful Web API integrations and decoupled architecture.</li>
-                <li>Integrating frontend architectures across <strong>React and Angular</strong> framework environments to consume high-throughput backend layers.</li>
-                <li>Managing relational architectures utilizing <strong>MySQL</strong> to support complex enterprise workflows and robust database transactions.</li>
-                <li>Leveraging advanced AI-assisted engineering companions like <strong>GitHub Copilot</strong> to dramatically accelerate development cycles, automate boilerplate, and eliminate manual errors.</li>
-                <li>Actively learning and researching emerging generative AI systems and developer toolchains to proactively increase delivery velocity.</li>
+                <li>Contributing key feature enhancements and technical solutions to the <strong>Halo Project</strong>, a workflow application dedicated to the <strong>UK Legal Industry</strong>.</li>
+                <li>Managing integration and delivery for <strong>Project Magnum</strong>, a business-critical system in the <strong>UK Personal Injury (PI) Legal Industry</strong>, building decoupled C# Web APIs, and developing the React frontend application.</li>
+                <li>Developing component-driven client interfaces across <strong>React</strong> and <strong>Angular</strong> to consume high-throughput REST APIs securely.</li>
+                <li>Optimizing database performance on large relational tables using query profiling, schema adjustments, and LINQ tuning in <strong>SQL Server</strong> and <strong>MySQL</strong>.</li>
+                <li>Collaborating actively in Agile sprint structures, contributing to sprint planning, codebase reviews, and technical debugging workflows.</li>
+                <li>Diagnosing and resolving system bugs in production environments, safeguarding data integrity and operational uptime.</li>
               </ul>
             </div>
           </div>
@@ -1678,10 +1721,11 @@
                 August 2023 — April 2025
               </div>
               <ul class="exp-bullets">
-                <li>Designed, coded, and deployed high-performance ASP.NET web ecosystems from initial concept to live release.</li>
-                <li>Pioneered advanced multithreading methodologies in Windows applications to deliver real-time data processing engines.</li>
-                <li>Maximized database throughput by profiling, tuning, and writing complex stored procedures, indices, and triggers on MS SQL Server databases.</li>
-                <li>Governed Agile scrum processes (daily stand-ups, code reviews, sprint planning) while mentoring junior developers.</li>
+                <li>Built, maintained, and deployed stable enterprise-oriented web applications using <strong>C#</strong>, <strong>ASP.NET MVC</strong>, and <strong>Web API</strong>.</li>
+                <li>Designed, optimized, and maintained relational database architectures, stored procedures, index schemas, and trigger logic in <strong>MS SQL Server</strong>.</li>
+                <li>Engineered backend business workflows, managing complex data pathways with <strong>ADO.NET</strong> and <strong>Entity Framework Core</strong>.</li>
+                <li>Diagnosed complex workflow bugs and system lag through detailed code debugging and database profile analysis.</li>
+                <li>Participated in cross-functional Agile team stand-ups, technical design sessions, and production release cycles.</li>
               </ul>
             </div>
           </div>
@@ -1700,8 +1744,9 @@
                 October 2022 — August 2023
               </div>
               <ul class="exp-bullets">
-                <li>Assisted cross-functional engineering squads across the full Software Development Lifecycle (SDLC) on ASP.NET delivery goals.</li>
-                <li>Refactored legacy client-facing interfaces using modern responsive designs with JavaScript, jQuery, HTML5, CSS3, and AJAX.</li>
+                <li>Supported software delivery by maintaining legacy ASP.NET backend features, validating local schemas, and drafting test files.</li>
+                <li>Refactored legacy web pages to use modern responsive grids, leveraging <strong>HTML5</strong>, <strong>CSS3</strong>, <strong>JavaScript</strong>, and <strong>jQuery</strong>.</li>
+                <li>Assisted in documenting system features and testing endpoints, ensuring strict alignment with initial developer specifications.</li>
               </ul>
             </div>
           </div>
@@ -1722,25 +1767,79 @@
       <h2 class="section-heading">Enterprise Projects</h2>
       <div class="divider-bar centered"></div>
       <p class="section-lead mx-auto text-center" style="max-width:540px;">
-        Production-grade systems delivered—from ERP platforms to management suites serving thousands of active users.
+        Real-world business applications and core backend components built to support reliable transactional operations.
       </p>
     </div>
 
     <div class="row g-4">
 
-      <!-- Project 1: BizPlus ERP -->
+      <!-- Project 1: Project Magnum -->
       <div class="col-md-6">
         <div class="project-card reveal-scale">
           <div class="project-header">
+            <div class="project-accent-bar" style="background:linear-gradient(90deg,var(--green),#00c853);"></div>
+            <div class="project-title">Project Magnum — PI Legal Industry UK</div>
+          </div>
+          <div class="project-body">
+            <ul class="project-impact-list">
+              <li>Managing integration and technical delivery for <strong>Project Magnum</strong>, a business-critical system in the <strong>UK Personal Injury (PI) Legal Industry</strong>.</li>
+              <li>Wrote decoupled backend service components and Web APIs using <strong>C# and .NET Core</strong> to integrate distributed workflow logic.</li>
+              <li>Engineered the frontend user application using <strong>React</strong>, building dynamic state-driven views to consume high-throughput RESTful Web APIs.</li>
+              <li>Eliminated database query bottlenecks on large transactional tables by profiling and tuning Entity Framework Core query logic on <strong>SQL Server</strong>.</li>
+            </ul>
+            <div class="project-tech-wrap">
+              <span class="tech-pill">C#</span>
+              <span class="tech-pill">.NET Core</span>
+              <span class="tech-pill">Web API</span>
+              <span class="tech-pill">React</span>
+              <span class="tech-pill">EF Core</span>
+              <span class="tech-pill">LINQ</span>
+              <span class="tech-pill">SQL Server</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2: Halo Project -->
+      <div class="col-md-6">
+        <div class="project-card reveal-scale reveal-d1">
+          <div class="project-header">
             <div class="project-accent-bar" style="background:linear-gradient(90deg,var(--blue),#f43f5e);"></div>
+            <div class="project-title">Halo Project — UK Legal Sector Workflow</div>
+          </div>
+          <div class="project-body">
+            <ul class="project-impact-list">
+              <li>Developing critical workflow components for a secure case management web application serving practitioners in the <strong>UK Legal Industry</strong>.</li>
+              <li>Implementing role-based authentication and secure transactional checkpoints to safeguard sensitive documents and legal parameters.</li>
+              <li>Refactoring query patterns in <strong>SQL Server</strong>, tuning stored procedures and indices to handle high case-load database operations.</li>
+              <li>Ensuring code readability, separation of concerns, and clean architectural patterns to support future maintainability.</li>
+            </ul>
+            <div class="project-tech-wrap">
+              <span class="tech-pill">C#</span>
+              <span class="tech-pill">ASP.NET Core</span>
+              <span class="tech-pill">Angular</span>
+              <span class="tech-pill">SQL Server</span>
+              <span class="tech-pill">Entity Framework Core</span>
+              <span class="tech-pill">Web API</span>
+              <span class="tech-pill">LINQ</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3: BizPlus ERP Education -->
+      <div class="col-md-6">
+        <div class="project-card reveal-scale reveal-d2">
+          <div class="project-header">
+            <div class="project-accent-bar" style="background:linear-gradient(90deg,#7c3aed,#ea4335);"></div>
             <div class="project-title">BizPlus ERP Education</div>
           </div>
           <div class="project-body">
             <ul class="project-impact-list">
-              <li>Guided a development sprint team to optimize a scalable enterprise ERP system, driving a <strong>40% overall performance optimization</strong>.</li>
-              <li>Scaled the SQL Server database layout to safely govern over <strong>10,000 transaction and student records</strong> with 99% data precision using query tuning and indexing.</li>
-              <li>Implemented dynamic Role-Based Access Control (RBAC) alongside custom RESTful APIs for 500+ active users.</li>
-              <li>Managed deployments with Git and GitHub for smooth CI/CD workflow pipelines.</li>
+              <li>Collaborated on building a highly scalable ERP web application using <strong>C#, ASP.NET MVC, SQL Server, JavaScript, jQuery, AJAX, and Bootstrap</strong>, boosting system performance by 40%.</li>
+              <li>Optimized the relational database for 10,000+ student records, attendance, and transactions, achieving 99% data accuracy and a 30% performance boost via query profiling and custom indexing.</li>
+              <li>Implemented secure Role-Based Access Control (RBAC) for HODs and trainers, and developed secure RESTful Web APIs to seamlessly integrate modules for 500+ active users.</li>
+              <li>Designed responsive, component-driven user interfaces and managed smooth production deployments using Git and GitHub for automated workflows.</li>
             </ul>
             <div class="project-tech-wrap">
               <span class="tech-pill">C#</span>
@@ -1749,6 +1848,8 @@
               <span class="tech-pill">LINQ</span>
               <span class="tech-pill">SQL Server</span>
               <span class="tech-pill">Web API</span>
+              <span class="tech-pill">JavaScript</span>
+              <span class="tech-pill">jQuery</span>
               <span class="tech-pill">AJAX</span>
               <span class="tech-pill">Bootstrap</span>
             </div>
@@ -1756,82 +1857,58 @@
         </div>
       </div>
 
-      <!-- Project 2: Housing Society -->
+      <!-- Project 4: Test Management System -->
       <div class="col-md-6">
-        <div class="project-card reveal-scale reveal-d1">
-          <div class="project-header">
-            <div class="project-accent-bar" style="background:linear-gradient(90deg,var(--green),#00c853);"></div>
-            <div class="project-title">Housing Society Management System</div>
-          </div>
-          <div class="project-body">
-            <ul class="project-impact-list">
-              <li>Engineered an integrated ecosystem featuring secure ASP.NET Core Identity authentication and authorization rules.</li>
-              <li>Designed clean relational models using EF Core for real-time reporting, paired with a dynamic Angular frontend for smooth RESTful service consumption.</li>
-              <li>Designed efficient relational models leveraging Entity Framework Core with LINQ for real-time data aggregation on MS SQL Server.</li>
-              <li>Enhanced user experience with a dynamic Angular front-end seamlessly integrated with backend via RESTful APIs.</li>
-            </ul>
-            <div class="project-tech-wrap">
-              <span class="tech-pill">C#</span>
-              <span class="tech-pill">ASP.NET Core</span>
-              <span class="tech-pill">Web API</span>
-              <span class="tech-pill">Angular</span>
-              <span class="tech-pill">EF Core</span>
-              <span class="tech-pill">LINQ</span>
-              <span class="tech-pill">MS SQL Server</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 3: Test Management -->
-      <div class="col-md-6">
-        <div class="project-card reveal-scale reveal-d2">
+        <div class="project-card reveal-scale reveal-d3">
           <div class="project-header">
             <div class="project-accent-bar" style="background:linear-gradient(90deg,var(--yellow),#ff8f00);"></div>
             <div class="project-title">Test Management System</div>
           </div>
           <div class="project-body">
             <ul class="project-impact-list">
-              <li>Built a test library module enabling management of 50+ customizable tests with role-based workflows for Admins, Psychologists &amp; Users.</li>
-              <li>Delivered customizable analytical testing modules and built an intuitive dashboard tracking user metrics, augmenting decision-making efficiency by 25%.</li>
-              <li>Optimized database for 10K+ users, reducing latency and page latency by 20%.</li>
-              <li>Integrated advanced search/filtering, reducing search time by 30%.</li>
+              <li>Engineered a highly customizable assessment and evaluation library module, supporting the management of 50+ complex assessment profiles.</li>
+              <li>Developed a data-driven reporting dashboard to track test attempts and compile automated analytics, improving administrative decision-making by 25%.</li>
+              <li>Implemented secure, role-based workflows and access controls for Admins, Psychologists, and end-users, ensuring strict data governance.</li>
+              <li>Optimized database performance and schemas for 10,000+ active users, reducing query latency by 20% under concurrent loads.</li>
+              <li>Integrated advanced search capabilities and client-side filtering algorithms, reducing average data search and retrieval times by 30%.</li>
             </ul>
             <div class="project-tech-wrap">
               <span class="tech-pill">C#</span>
               <span class="tech-pill">ASP.NET MVC</span>
-              <span class="tech-pill">MS SQL Server</span>
               <span class="tech-pill">Web API</span>
+              <span class="tech-pill">SQL Server</span>
+              <span class="tech-pill">JavaScript</span>
               <span class="tech-pill">jQuery</span>
               <span class="tech-pill">AJAX</span>
+              <span class="tech-pill">Bootstrap</span>
               <span class="tech-pill">HTML</span>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Project 4: HR Mantra & Home Stay -->
+      <!-- Project 5: Housing Society Management System -->
       <div class="col-md-6">
-        <div class="project-card reveal-scale reveal-d3">
+        <div class="project-card reveal-scale">
           <div class="project-header">
-            <div class="project-accent-bar" style="background:linear-gradient(90deg,var(--red),#ff6d00);"></div>
-            <div class="project-title">HR Mantra &amp; Home Stay Systems</div>
+            <div class="project-accent-bar" style="background:linear-gradient(90deg,#00838f,#00b0ff);"></div>
+            <div class="project-title">Housing Society Management System</div>
           </div>
           <div class="project-body">
             <ul class="project-impact-list">
-              <li>Developed HR Forum core functionalities and user registration pipelines handling 5,000+ active users.</li>
-              <li>Engineered Registration, Subscription, Candidate Pipeline &amp; Job Board modules with advanced search, cutting response times by 20%.</li>
-              <li>Built Home Stay modules managing 120+ properties &amp; 60 daily bookings, boosting workflow navigation speeds by 25%.</li>
-              <li>Collaborated on secure RBAC authentication, enhancing data integrity and performance by 30%.</li>
+              <li>Developed a comprehensive Housing Society Management System utilizing <strong>C#, ASP.NET Core, and Web API</strong> to integrate authentication, member records, and financial tracking modules.</li>
+              <li>Implemented enterprise-grade security structures using <strong>ASP.NET Core Identity</strong> and Role-Based Access Control (RBAC), ensuring safe and tailored workflows for all system roles.</li>
+              <li>Designed efficient relational models and optimized queries using <strong>Entity Framework Core and LINQ</strong>, facilitating real-time data aggregation on MS SQL Server.</li>
+              <li>Enhanced the overall user experience by creating a dynamic, responsive <strong>Angular</strong> frontend that interacts seamlessly with backend RESTful services.</li>
             </ul>
             <div class="project-tech-wrap">
               <span class="tech-pill">C#</span>
-              <span class="tech-pill">ASP.NET MVC</span>
-              <span class="tech-pill">WinForms</span>
-              <span class="tech-pill">ADO.NET</span>
+              <span class="tech-pill">ASP.NET Core</span>
+              <span class="tech-pill">Web API</span>
+              <span class="tech-pill">Angular</span>
+              <span class="tech-pill">LINQ</span>
+              <span class="tech-pill">EF Core</span>
               <span class="tech-pill">SQL Server</span>
-              <span class="tech-pill">Siticone UI</span>
-              <span class="tech-pill">EF</span>
             </div>
           </div>
         </div>
@@ -1848,10 +1925,10 @@
   <div class="container">
     <div class="text-center mb-5 reveal">
       <div class="eyebrow justify-content-center">Core Competencies</div>
-      <h2 class="section-heading">Technical Skills Shield</h2>
+      <h2 class="section-heading">Technical Skills &amp; Stack</h2>
       <div class="divider-bar centered"></div>
-      <p class="section-lead mx-auto text-center" style="max-width:520px;">
-        A battle-tested stack for delivering enterprise-grade, high-performance web systems from architecture to deployment.
+      <p class="section-lead mx-auto text-center" style="max-width:540px;">
+        A practical, backend-focused technical stack designed to build maintainable business applications, secure REST APIs, and highly optimized database layers.
       </p>
     </div>
 
@@ -1864,15 +1941,16 @@
             <div class="sg-icon" style="background:rgba(26,115,232,0.08); color:var(--blue);">
               <i class="bi bi-server"></i>
             </div>
-            <div class="sg-title">Backend<br>Architecture</div>
+            <div class="sg-title">Backend<br>Engineering</div>
           </div>
           <div>
             <span class="skill-tag">C#</span>
             <span class="skill-tag">.NET Core</span>
+            <span class="skill-tag">ASP.NET Core</span>
             <span class="skill-tag">ASP.NET MVC</span>
-            <span class="skill-tag">WebForms</span>
-            <span class="skill-tag">REST API</span>
-            <span class="skill-tag">Windows Forms</span>
+            <span class="skill-tag">Web API</span>
+            <span class="skill-tag">Clean Code Practices</span>
+            <span class="skill-tag">Modular Development</span>
           </div>
         </div>
       </div>
@@ -1884,15 +1962,15 @@
             <div class="sg-icon" style="background:rgba(52,168,83,0.08); color:var(--green);">
               <i class="bi bi-database-fill"></i>
             </div>
-            <div class="sg-title">Data &amp; ORM<br>Layers</div>
+            <div class="sg-title">Database &amp;<br>Query Tuning</div>
           </div>
           <div>
             <span class="skill-tag">SQL Server</span>
-            <span class="skill-tag">Entity Framework</span>
-            <span class="skill-tag">EF Core</span>
+            <span class="skill-tag">Entity Framework Core</span>
             <span class="skill-tag">ADO.NET</span>
-            <span class="skill-tag">LINQ</span>
+            <span class="skill-tag">LINQ Optimization</span>
             <span class="skill-tag">Stored Procedures</span>
+            <span class="skill-tag">Index Tuning &amp; Profile</span>
           </div>
         </div>
       </div>
@@ -1904,38 +1982,36 @@
             <div class="sg-icon" style="background:rgba(234,67,53,0.08); color:var(--red);">
               <i class="bi bi-layout-text-window-reverse"></i>
             </div>
-            <div class="sg-title">Frontend<br>Engineering</div>
+            <div class="sg-title">Frontend<br>Development</div>
           </div>
           <div>
             <span class="skill-tag">Angular</span>
+            <span class="skill-tag">React</span>
             <span class="skill-tag">JavaScript</span>
             <span class="skill-tag">jQuery</span>
-            <span class="skill-tag">HTML5</span>
-            <span class="skill-tag">CSS3</span>
+            <span class="skill-tag">HTML5 / CSS3</span>
             <span class="skill-tag">Bootstrap</span>
-            <span class="skill-tag">AJAX</span>
-            <span class="skill-tag">JSON</span>
+            <span class="skill-tag">AJAX / JSON</span>
           </div>
         </div>
       </div>
 
-      <!-- DevOps -->
+      <!-- Practices -->
       <div class="col-sm-6 col-lg-3">
         <div class="skill-group sg-yellow reveal-scale reveal-d3">
           <div class="sg-header">
             <div class="sg-icon" style="background:rgba(251,188,5,0.12); color:#a07800;">
               <i class="bi bi-gear-wide-connected"></i>
             </div>
-            <div class="sg-title">DevOps &amp;<br>Practices</div>
+            <div class="sg-title">Practices &amp;<br>Workflows</div>
           </div>
           <div>
-            <span class="skill-tag">GitHub Copilot (AI Coding)</span>
-            <span class="skill-tag">CI/CD Workflows</span>
-            <span class="skill-tag">GitHub</span>
-            <span class="skill-tag">Dependency Injection</span>
-            <span class="skill-tag">IoC</span>
             <span class="skill-tag">SOLID Principles</span>
-            <span class="skill-tag">Agile / Scrum</span>
+            <span class="skill-tag">Agile / Scrum Sprints</span>
+            <span class="skill-tag">API Integration</span>
+            <span class="skill-tag">GitHub Copilot</span>
+            <span class="skill-tag">Dependency Injection</span>
+            <span class="skill-tag">Authentication &amp; Auth</span>
           </div>
         </div>
       </div>
@@ -2054,16 +2130,16 @@
             </div>
             
             <blockquote class="beyond-quote">
-              &ldquo;Beyond coding, I enjoy learning, leading, solving problems, and continuously improving myself both personally and professionally.&rdquo;
+              &ldquo;Beyond writing code, I am driven by technical curiosity, a research-driven mindset, and the focus required to translate complex business processes into clean, maintainable software.&rdquo;
             </blockquote>
             
             <ul class="beyond-points-list">
-              <li><strong>Continuous Self-Improvement:</strong> Intentionally pursuing daily learning, technical mastery, and holistic professional growth.</li>
-              <li><strong>Real-World Business Impact:</strong> Translating complex relational models and algorithms into tangible, high-value user experiences that solve real-world problems.</li>
-              <li><strong>AI-Assisted Productivity:</strong> Proficient in leveraging advanced coding companions like <strong>GitHub Copilot</strong> and productivity tools to accelerate development velocity, automate boilerplate, and dramatically minimize manual coding errors.</li>
-              <li><strong>Architecture &amp; Product Mindset:</strong> Deeply curious about end-to-end design patterns, clean decoupling layers, and product delivery paradigms.</li>
-              <li><strong>Mentoring &amp; Collaborative Growth:</strong> Dedicated to pair programming, sharing knowledge, and elevating colleagues to achieve collective sprint targets.</li>
-              <li><strong>Systems Optimisation:</strong> Passionate about analyzing bottlenecks, automating manual operations, and building resilient, highly scalable enterprise web applications.</li>
+              <li><strong>Problem-Solving Mindset:</strong> Viewing software engineering as a tool to model and streamline complex workflows, solving real business issues rather than just matching specifications.</li>
+              <li><strong>Technical Curiosity &amp; Research:</strong> Deeply interested in software architecture patterns, modular designs, database schemas, and emerging advances in the .NET ecosystem.</li>
+              <li><strong>AI-Assisted Productivity:</strong> Experienced in leveraging advanced programming companions like <strong>GitHub Copilot</strong> to manage repetitive boilerplate, allowing more focus on debugging complex data paths and core architectures.</li>
+              <li><strong>Maintainable Engineering:</strong> Focused on clean, self-documenting code, proper separation of layers, and robust query optimization to keep production systems maintainable for long-term operations.</li>
+              <li><strong>Translating Requirements:</strong> Actively bridging the gap between business specifications and database schemas, building applications that directly support real-world business operations.</li>
+              <li><strong>Agile Partnership:</strong> Embracing collaborative Agile sprints, code reviews, and analytical debugging to keep release pipelines stable and dependable.</li>
             </ul>
           </div>
           
@@ -2162,10 +2238,10 @@
           Get In Touch
         </div>
         <h2 class="contact-headline">
-          Let's connect to build scalable, high‑performance web systems.
+          Let's connect to build reliable, business-critical enterprise systems.
         </h2>
         <p class="contact-sub">
-          Available for full-time corporate opportunities and selective freelance projects. Whether it's database optimization, a new .NET integration, or frontend refactoring — let's build something beautiful.
+          Available for full-time corporate engineering roles and selective freelance contracts. Whether it's a database query profiling challenge, a custom Web API integration, or an Angular feature upgrade — let's build a clean, maintainable solution.
         </p>
       </div>
 
